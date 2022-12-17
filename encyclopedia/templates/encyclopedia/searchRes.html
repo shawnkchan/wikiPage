@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search Results 
+{% endblock %}
+
+{% block body %}
+    <h1>Similar Search Results</h1>
+    <ol>
+        {% for page in pages %}
+            <li><a href="{% url 'encyclopedia:page' page %}">{{ page }}</a></li>
+        {% empty %}
+            <li>No Similar Search Results</li>
+        {% endfor %}
+    </ol>
+{% endblock %}
